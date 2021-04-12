@@ -1,6 +1,6 @@
-//creo il mio array di cognomi
 
-var a = [
+//creo l'array dei cognomi
+var listaCognomi = [
   'Bianchi',
   'Neri',
   'Rossi',
@@ -8,23 +8,27 @@ var a = [
   'Gialli'
 ];
 
-var listaCognomi = a
-
-listaCognomi.push =prompt('inserisci il cognome')
-
-console.log(a)
-
+// aggiungo un nuovo cognome col prompt E metto in ordine l'array
+var nuovoCognome = prompt("inserisci il tuo cognome, con prima lettera MAIUSCOLA!");
+listaCognomi.push(nuovoCognome);
+listaCognomi.sort();
 
 
+/* console.log(listaCognomi); */
+
+//creo il ciclo for per stampare la lista
+for(var i = 0; i < listaCognomi.length; i++){
+  var elementoPrecedente = document.getElementById('lista').innerHTML;
+  document.getElementById('lista').innerHTML = elementoPrecedente + "<li>" + listaCognomi[i] + "</li>"
+}
+//creo il secondo ciclo for per trovare la posizione 
+for(var i = 0; i < listaCognomi.length; i++){
+  if (nuovoCognome == listaCognomi){
+    console.log([i]+1)
+  }
+} 
 
 
-/* //pusho il mio cognome nell'array
-listaCognomi.join = prompt('inserisci il tuo cognome')
 
-for (var i =0; i<listaCognomi.length; i++){
-  var elemento_lista = listaCognomi[i];
-  
-  var elemento_precedente = document.getElementById('lista').innerHTML;
-  
-  document.getElementById('lista').innerHTML= elemento_precedente + "<li>" + elemento_lista + "</li>";
-} */
+
+
